@@ -40,3 +40,6 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Hero video is delivered from Cloudinary
+/public/videos/herovdo.webm

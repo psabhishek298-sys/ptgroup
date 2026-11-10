@@ -150,3 +150,20 @@ body{font-size:16px}
 }
 @media(max-width:380px){.nav-wrap{padding:0 13px}.brand{gap:4px}.header .brand-logo{width:54px;height:54px}.brand-name{font-size:25px}.brand-name small{font-size:8px}.contact{padding-left:14px;padding-right:14px}.form-wrap{padding:24px 16px}.theme-grid{grid-template-rows:165px 165px 165px}.theme-content{left:10px;bottom:11px}.theme-content b{font-size:21px}.feature-grid{grid-template-rows:240px 165px}.portfolio{padding-left:14px;padding-right:14px}.portfolio-grid{grid-auto-rows:150px}}
 @media(prefers-reduced-motion:reduce){.scroll-reveal.scroll-pending{opacity:1;transform:none}}
+
+/* Branded first-load screen while the Cloudinary hero video buffers. */
+.site-loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#f7f5ef;color:var(--green);opacity:1;visibility:visible;transition:opacity .45s ease,visibility .45s ease}
+.site-loader-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.site-loader-content{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px}
+.site-loader-orbit{width:118px;height:118px;display:grid;place-items:center;position:relative;margin-bottom:18px}
+.site-loader-orbit:before{content:'';position:absolute;inset:3px;border:1px solid rgba(182,155,108,.25);border-top-color:#b69b6c;border-right-color:#b69b6c;border-radius:50%;animation:loader-spin 1.5s linear infinite}
+.site-loader-orbit img{width:82px;height:82px;object-fit:contain;animation:loader-pulse 1.8s ease-in-out infinite}
+.site-loader-wordmark{font:500 30px/.95 var(--serif);letter-spacing:1.2px}
+.site-loader-caption{margin-top:10px;color:#77766e;font-size:12px;letter-spacing:1.4px}
+.site-loader-progress{width:150px;height:2px;margin-top:23px;overflow:hidden;background:#e3dfd4}
+.site-loader-progress i{display:block;width:40%;height:100%;background:#a88a58;transform:translateX(-110%);animation:loader-progress 1.35s ease-in-out infinite}
+@keyframes loader-spin{to{transform:rotate(360deg)}}
+@keyframes loader-pulse{0%,100%{transform:scale(.94);opacity:.78}50%{transform:scale(1.04);opacity:1}}
+@keyframes loader-progress{to{transform:translateX(380%)}}
+@media(max-width:700px){.site-loader-orbit{width:102px;height:102px}.site-loader-orbit img{width:72px;height:72px}.site-loader-wordmark{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.site-loader-orbit:before,.site-loader-orbit img,.site-loader-progress i{animation:none}.site-loader-progress i{width:100%;transform:none}}
